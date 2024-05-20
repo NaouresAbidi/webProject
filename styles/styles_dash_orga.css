@@ -1,0 +1,287 @@
+
+.page-flexbox{
+    display: flex;
+    justify-content: left;
+}
+
+a{
+    text-decoration: none;
+}
+
+a p{
+    display: inline-block;
+    color: black;
+    position: relative;
+}
+
+a p::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  border-radius: 5px;
+  height: 0.15em;
+  bottom: 0;
+  left: 0;
+  background: #a0c7c7;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+a p:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* -------------------------------------- */
+header{
+    padding-left: 20px
+}
+
+.sidebar-space{
+    width: 280px;
+    background-color: #a0c7c7;
+}
+
+
+.text{
+    padding: 0;
+    margin: 0;
+}
+
+.profile-div{
+    padding: 0 20px 10px 20px;    
+    display: flex;
+    align-items: center;
+}
+
+.profile-div img{
+    width: 80px;
+    height: 80px;
+    object-fit:cover;
+    border-radius: 50%;
+
+    margin-right: 20px;
+}
+
+.profile-div .profile-text{
+    width: 40%;
+}
+
+.profile-div .profile-text a{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.sidebar-space hr{
+    margin: 20px 30px 40px 25px;
+    height: 0;
+    /* color: black; */
+    border: 1px solid rgb(99, 0, 138);
+}
+
+
+.manage-ev-list{
+    margin-top: -20px;
+    padding: 0 20px 0 20px;
+}
+
+.manage-ev{
+    margin: 0 0 -20px 0;
+    padding-left: 40px;
+
+}
+.manage-ev .icon{
+    margin-right: 0;
+}
+
+.manage-ev:hover{
+    background-color: #E6E6E8;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.logout hr{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+
+/* --------------------------------------------- */
+
+
+.main{
+    margin: 50px 0px 0 320px;
+}
+.events-div{
+    display: flex;
+
+}
+
+.main-left {
+    width: 45%;
+}
+
+.icon{
+    margin: 0 10px 0 5px;
+}
+
+.events{
+    height: 320px;
+    overflow-y: auto;
+    width: 95%;
+
+}
+
+.box{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.event-card{
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(39, 35, 67, 0.2);    
+    background-color: #E6E6E8;
+    
+    width: 95%;
+    padding: 20px 20px;
+    margin: 15px 30px 15px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.event-card img{
+    width: 100px;
+    height: 100px;
+    object-fit:cover;
+
+}
+
+.event-card p{
+    font-size: 15px;
+}
+
+.event-card .text{
+    width: 100%;
+    margin: 0 0 0 20px;
+
+}
+
+.event-btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.event-btns input, .prev-event-card a input{
+    background-color: #a0c7c7;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    
+}
+
+
+.event-btns input:hover{
+    border-inline: solid 1px #516666;
+    border-bottom: solid 1px #516666;
+}
+
+.delBtn{
+    background-color: rgb(194, 194, 194) !important;
+}
+
+/* ------------------------------------------------- */
+
+.main-right{
+    padding: 0 0 0 30px;
+    width: 50%;
+}
+
+
+/* ---- M O D A L ----------------------------------- */
+#newModal{
+    display: none;}
+
+.new-modal{
+    position: fixed;
+    z-index: 1; 
+    padding-top: 20px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.close {
+    color: #6f6f6f;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.new-modal-box{
+    background-color: #fefefe;
+    height: 98%;
+    width: 840px;
+
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px 70px 10px 70px;
+    font-size: 15px;
+}
+#newModal .new-modal-box{
+    margin-left: 350px;
+}
+
+
+#previewBanner{
+    display: block;
+    height: 150px;
+    object-fit: cover;
+}
+
+.modal-tab{
+    width: 100%;
+}
+
+.modal-tab td{
+    vertical-align: top;
+}
+.modal-tab td:first-child{
+    width: 58%;
+}
+
+.modal-tab td:first-child input[type = "text"], .modal-tab textarea, .modal-tab td label{
+    margin: 0 0 10px 0;
+    width: 85%;
+}
+
+.modal-tab input[type = "checkbox"]{
+    margin-right: 10px;
+}
+
+
+#addBtn{
+    width: 40%;
+    display: block;
+
+    margin-right: auto;
+    margin-left: auto;
+}

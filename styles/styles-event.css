@@ -1,0 +1,210 @@
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: #E3F6F5;
+}
+
+.title{
+    /* background-image: url("../Media/Banner\ -\ Abstract\ Art.jpg") !important; */
+
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 400px;
+
+    display: flex;
+    align-items: flex-end;
+
+    color: white;
+
+}
+.title h1{
+    font-size: 43px;
+    font-weight: 500;
+}
+
+.test{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, black 100%);
+    content: '';
+
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 30px 90px;
+}
+
+
+hr{
+    margin-top: 5px;
+}
+h2{
+    vertical-align: top;
+    display: inline-block;
+    font-size: 23px;
+}
+.icon{
+    margin: 4px 10px 0 0;
+}
+
+/* ------------------------------------------ */
+
+.main-div{
+    padding: 50px 90px 90px 90px;
+}
+
+
+/* ------------------------------------------ */
+
+.top-section{
+    display: flex;
+    margin-top: 30px;
+}
+
+
+.left-section{
+width: 73%;
+}
+
+.left-section .location h2{
+    margin-bottom: 15px;
+}
+
+.left-section .date-container{
+    border: 1px solid #272343;
+    padding: 15px 35px 35px 35px;
+    width: 60%;
+}
+
+
+.right-section{
+    background-image: url(../Media/Ticket\ Background.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 60px 40px 80px 40px;
+}
+.right-section p{
+    color: white;
+    font-size: 30px;
+}
+
+.right-section .btn{
+    font-size: 15px;
+    padding: 10px 28px;
+}
+
+
+
+/* ------------------------------------------ */
+
+.event-desc-container{
+    background-color: #272343;
+    padding: 30px 90px;
+    margin: 0 -90px 0 -90px;
+    min-height: 150px;
+    color: white;
+    font-family:'Calibri'; 
+    font-size: 19px;
+    font-weight: 300;
+
+}
+
+
+
+/* ------------------------------------------ */
+
+
+ul{
+    margin: 10px 30px;
+}
+
+.tags{
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+}
+
+.tag{
+    background-color: #D4E8E7;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin-right: 20px;
+}
+
+
+/* ------------------------------------------ */
+
+
+.organiser-container{
+    background-color: #D4E8E7;
+    padding: 27px 37px;
+    width: 42%;
+    text-wrap: wrap;
+    display: flex;
+    align-items: center;
+
+}
+.organiser-container *{
+    vertical-align: middle;
+}
+
+.organiser-container img{
+    width: 18%;
+    margin-right: 40px;
+}
+
+.organiser-container p{
+    font-size: 20px;
+    font-weight: 600;
+    text-wrap: wrap;
+}
+
+
+/* ------------------------------------------ */
+
+
+.form-container{
+    /* background-image: url(../Media/Banner\ Form\ -\ Abstract\ Art.png); */
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 340px;
+    margin: 0 -90px;
+
+}
+
+.form-container-content{
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 80px 0 100px 0;
+
+    
+    color: white;
+}
+
+.form-container-content p{
+    font-family:'Calibri'; 
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.form-container-content .btn{
+    margin-top: 40px;
+    padding: 13px 80px;
+
+    font-size: 16px;
+}
+
+/* ------------------------------------------ */
+
+
