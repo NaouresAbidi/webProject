@@ -44,7 +44,7 @@ $user = $stmt->fetch();
                     <img src="php/<?php echo $user['PFP_U'];?>" alt="Image">
                     <div class="profile-text">
                         <p><?php echo $user['FIRSTNAME_U'].' '.$user['LASTNAME_U'];?></p>
-                        <a href="profile.html">
+                        <a href="profile.php">
                             View profile
                             <i class="fa-solid fa-arrow-right"></i></a>
                     </div>

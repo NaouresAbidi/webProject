@@ -25,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         switch ($user['USER_TYPE']) {
             case 'admin':
-                header("Location: Dashboard_admin.html");
+                header("Location: Dashboard_admin.php");
                 break;
             case 'organizer':
                 header("Location: Dashboard_orga.php");
                 break;
             case 'simpleUser':
-                header("Location: eventlist.html");
+                header("Location: eventlist.php");
                 break;
             default:
                 echo "Invalid user type.";

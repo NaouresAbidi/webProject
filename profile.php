@@ -5,7 +5,7 @@ include('db.php');
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     // Redirect to login page if not logged in
-    header('Location: login.php');
+    header('Location: signin.php');
     exit;
 }
 
@@ -95,7 +95,7 @@ $events_result = $stmt->fetchAll();
             <img src="Media/Icon Edit.png">
             Edit profile
         </button>
-        <img id="profilePic" class="profile-pic" src="Media/coolcat.jpg" alt="Profile picture">
+        <img id="profilePic" class="profile-pic" src="Media/coolcat.jpg" src="<?php echo 'uploads/' . htmlspecialchars($user_data['PFP_U']); ?>" alt="Profile picture">
         <div class="main-info">
             <br>
             <h2 id="userName"><?php echo htmlspecialchars($user_data['FIRSTNAME_U']); ?></h2>
@@ -160,6 +160,10 @@ $events_result = $stmt->fetchAll();
         function redirectToInvoice(eventId) {
             window.location.href = 'invoice.php?event_id=' + eventId;
         }
+        document.getElementById('editBtn').addEventListener('click', function() {
+            const userId = <?php echo json_encode($user_id); ?>;
+            window.location.href = 'editprofilepage.php?user_id=' + userId;
+        });
     </script>
     </body>
 </html>
