@@ -2,14 +2,12 @@
 session_start();
 include('db.php');
 
-// Fetch the user ID from the query parameter
-if (!isset($_GET['user_id'])) {
+if (!isset($_SESSION['user_id'])) {
     header('Location: signin.php');
     exit;
 }
 
 $user_id = $_GET['user_id'];
-echo $user_id;
 
 $user_query = "SELECT * FROM users WHERE ID_U = ?";
 $stmt = $pdo->prepare($user_query);

@@ -1,7 +1,7 @@
 <?php
-require_once('Connexion.php');
+require_once('../db.php');
 
-$statement = $connexion->query("SELECT * FROM event");
+$statement = $pdo->query("SELECT * FROM event");
 $result = $statement->fetchAll();
 
 ?>

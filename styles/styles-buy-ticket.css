@@ -1,7 +1,16 @@
-body {
-    background: purple !important;
+*{
+    font-family: "Outfit" !important;
 }
 
+body {
+    background: purple !important;
+    font-family: "Outfit" !important;
+}
+
+hr{
+    width: 50%;
+    margin-bottom: 30px;
+}
 .title {
     text-align: center;
     margin: 90px 0 50px 0;
@@ -31,8 +40,9 @@ h2 {
 }
 
 hr {
-    width: 50%;
+    width: 100%;
     margin-bottom: 30px;
+
 }
 
 

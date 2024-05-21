@@ -62,9 +62,7 @@ if (!$event) {
                     </tr>
                 </table>
             </div>
-            <div class="right">
-                <img src="php/<?php echo htmlspecialchars($event['BANNER']); ?>" alt="Event Flyer">
-            </div>
+           
         </div>
 
         <h2>ATTENDEE INFORMATION</h2>

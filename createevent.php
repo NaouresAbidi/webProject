@@ -17,7 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $targetFile = $targetDir . basename($_FILES["eventBanner"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-    $check = getimagesize($_FILES["eventBanner"]["tmp_name"]);
+    if(getimagesize($_FILES["eventBanner"]["tmp_name"])){
+        $check = getimagesize($_FILES["eventBanner"]["tmp_name"]);
+    } else{
+        $check = false;
+    }
+
     if ($check === false) {
         echo "File is not an image.";
         $uploadOk = 0;

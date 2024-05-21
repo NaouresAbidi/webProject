@@ -11,12 +11,14 @@ body{
 
 }
 
-.navbar{
+/* .navbar{
     background-color: #fffffe;
     height: 50px;
     top: 0;
     left: 0;
-}
+} */
+
+
 
 .top{
     background-color: #272343;
@@ -44,6 +46,7 @@ body{
 
 .main-info h2{
     display: inline;
+    
 }
 
 .top button{
@@ -53,8 +56,13 @@ body{
     display: block;
     font-size: 17px;
     padding: 8px 20px 8px 20px;
-
+    text-decoration: none;
+    
 }
+.top a{
+    text-decoration: none;
+}
+
 .top #name{
     margin-bottom: -10px;
 }
@@ -129,7 +137,6 @@ hr{
 /* ------------------ Modal ------------------ */
 
 .invoice-contain{
-    display: none;
     position: fixed;
     z-index: 1; 
     padding-top: 70px; 

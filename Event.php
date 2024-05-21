@@ -72,7 +72,7 @@ if ($event_id) {
                 <br><br><br>
                 <p>Price: <?php echo htmlspecialchars($event['PRICE']); ?>$</p>
                 <br>
-                <a href="buy-ticket.html?id=<?php echo htmlspecialchars($event['ID_EV']); ?>">
+                <a href="buy-ticket.php?event_id=<?php echo htmlspecialchars($event['ID_EV']); ?>">
                     <button class="btn">GET YOUR TICKET</button>
                 </a>
             </div>

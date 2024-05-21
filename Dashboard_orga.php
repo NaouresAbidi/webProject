@@ -3,7 +3,7 @@ session_start();
 include('db.php');
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: signin.php');
     exit;
 }
 
@@ -114,13 +114,13 @@ $user = $stmt->fetch();
                 foreach ($events as $event) {
                 ?>
                     <div class="event-card">
-                        <img src="<?php echo $event['BANNER']; ?>" alt="Image">
+                        <img src="php/<?php echo $event['BANNER']; ?>" alt="Image">
                         <div class="text">
                             <p><?php echo $event['NAME_EV']; ?></p>
                             <p><b><?php echo $event['DATE_EV']; ?></b></p>
                             <div class="event-btns">
                                 <a href="Event.html"><input type="button" value="Display"></a>
-                                <a href="editEventPage.php?idEV=<?php echo $event['ID_EV']; ?>"><button class="btn">View</button></a>
+                                <a href="editEventPage.php?idEV=<?php echo $event['ID_EV']; ?>"><button class="btn">Edit</button></a>
 
                                 <form action="php/delEvent.php">
                                     <input class="delBtn" type="button" value="Delete">
@@ -146,7 +146,7 @@ $user = $stmt->fetch();
                 foreach ($prev_events as $prevEvent) {
                 ?>
                     <div class="event-card prev-event-card">
-                        <img src="<?php echo $prevEvent['BANNER']; ?>" alt="Image">
+                        <img src="php/<?php echo $prevEvent['BANNER']; ?>" alt="Image">
                         <div class="text">
                             <p><?php echo $prevEvent['NAME_EV']; ?></p>
                             <p><?php echo $prevEvent['DATE_EV']; ?></p>

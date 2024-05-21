@@ -1,35 +1,5 @@
 <?php
 
-// use function PHPSTORM_META\type;
-
-// require_once('Connexion.php');
-
-// if(isset($_GET['idEV'])){
-//     $id = $_GET['idEV'];
-// }
-
-
-
-//     // ------ A D D -- E V E N T ------------------
-//     // $req = "UPDATE event SET NAME_EV=$NAME_EV, DATE_EV=$DATE_EV, T_START=$T_START, T_END=$T_END, LOC=$LOC, DESC_EV=$DESC_EV, PRICE=$PRICE, BANNER=$uploadFile, TAGS_EV=$TAGS_EV, NB_PLACES=$NB_PLACES WHERE ID_EV=$ID_EV";
-    
-// // } else{
-//     // $req = "UPDATE event SET NAME_EV=$NAME_EV, DATE_EV=$DATE_EV, T_START=$T_START, T_END=$T_END, LOC=$LOC, DESC_EV=$DESC_EV, PRICE=$PRICE, TAGS_EV=$TAGS_EV, NB_PLACES=$NB_PLACES WHERE ID_EV=$ID_EV";
-//     $req = "UPDATE event SET NAME_EV=$NAME_EV WHERE ID_EV=$ID_EV";
-// // }
-
-// $result = $connexion->exec($req);
-
-// if($result)
-//     echo "<hr>Event edited successfully";
-// else
-//     echo "<hr>Failed to edit event";
-
-?>
-
-
-<?php
-
 // require_once('Connexion.php');
 
 // // Check if the necessary data is received via POST
@@ -99,16 +69,16 @@
 
 <?php
 
-require_once('Connexion.php');
+require_once('../db.php');
 
 if(isset($_POST['idEV'], $_POST['eventName'], $_POST['eventDate'], $_POST['eventStartT'], $_POST['eventEndT'], $_POST['eventLocation'], $_POST['eventDesc'], $_POST['eventPrice'], $_POST['eventNBplaces'])) {
     $ID_EV = $_POST['idEV'];
-    $NAME_EV = $connexion->quote($_POST['eventName']); // Sanitize and quote the string
+    $NAME_EV = $pdo->quote($_POST['eventName']); // Sanitize and quote the string
     $DATE_EV = $_POST['eventDate'];
     $T_START = $_POST['eventStartT'];
     $T_END = $_POST['eventEndT'];
-    $LOC = $connexion->quote($_POST['eventLocation']); 
-    $DESC_EV = $connexion->quote($_POST['eventDesc']);
+    $LOC = $pdo->quote($_POST['eventLocation']); 
+    $DESC_EV = $pdo->quote($_POST['eventDesc']);
     $PRICE = $_POST['eventPrice'];
     $TAGS_EV = 'No tags selected'; 
     $NB_PLACES = $_POST['eventNBplaces'];
@@ -134,7 +104,7 @@ if(isset($_POST['idEV'], $_POST['eventName'], $_POST['eventDate'], $_POST['event
         $req = "UPDATE event SET NAME_EV=$NAME_EV, DATE_EV='$DATE_EV', T_START='$T_START', T_END='$T_END', LOC=$LOC, DESC_EV=$DESC_EV, PRICE=$PRICE, TAGS_EV='$TAGS_EV', NB_PLACES=$NB_PLACES WHERE ID_EV=$ID_EV";
     }
 
-    $result = $connexion->exec($req);
+    $result = $pdo->exec($req);
 
     if($result !== false) {
         // $_SESSION['edit_event_message'] = "Event edited successfully";
@@ -147,7 +117,7 @@ if(isset($_POST['idEV'], $_POST['eventName'], $_POST['eventDate'], $_POST['event
     }
     // header("Location: ../editEventPage.php");
 
-} else {
-    echo "<hr>Required data not received";
+// } else {
+    // echo "<hr>Required data not received";
 }
 ?>

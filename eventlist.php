@@ -1,6 +1,14 @@
 <?php
 require_once('db.php');
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+  header('Location: signin.php');
+  exit;
+} 
+
+$user_id = $_SESSION['user_id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -36,30 +44,21 @@ session_start();
                     </li>
                     <ul class="menu-links">
                         <li class="nav-link">
-                            <a href="#"><i class="fa-solid fa-house icon"></i>
-                                <span class="text nav-text">Events Dashboard</span>                            
+                            <a href="home.php"><i class="fa-solid fa-house icon"></i>
+                                <span class="text nav-text">Home</span>                            
                         </a>
                         </li>
                         <li class="nav-link">
-                            <a href="#"><i class="fa-solid fa-user icon"></i>
+                            <a href="profile.php"><i class="fa-solid fa-user icon"></i>
                                 <span class="text nav-text">Profile</span>                            
                         </a>
                         </li>
                         <li class="nav-link">
-                            <a href="#"><i class="fa-solid fa-file-invoice-dollar icon"></i>
-                                <span class="text nav-text">History</span>                            
+                            <a href="eventlist.php"><i class="fa-solid fa-house icon"></i>
+                                <span class="text nav-text">Events</span>                            
                         </a>
                         </li>
-                        <li class="nav-link">
-                            <a href="#"><i class="fa-solid fa-square-phone icon"></i>
-                                <span class="text nav-text">Contact Us</span>                            
-                        </a>
-                        </li>
-                        <li class="nav-link">
-                            <a href="#"><i class="fa-solid fa-bell icon"></i>
-                                <span class="text nav-text">Notifications</span>                            
-                        </a>
-                        </li>
+                        
                     </ul>
 
                 </div>
@@ -95,7 +94,7 @@ session_start();
 
                 <div class="cards">
                 <?php
-                  $statement = $connexion->query("SELECT * FROM event WHERE TAGS_EV LIKE '%Art%';");
+                  $statement = $pdo->query("SELECT * FROM event WHERE TAGS_EV LIKE '%Art%';");
                   $result = $statement->fetchAll();
                 
                   foreach($result as $event)
@@ -125,7 +124,7 @@ session_start();
 
                 <div class="cards">
                 <?php
-                  $statement = $connexion->query("SELECT * FROM event WHERE TAGS_EV LIKE '%Festival%';");
+                  $statement = $pdo->query("SELECT * FROM event WHERE TAGS_EV LIKE '%Festival%';");
                   $result = $statement->fetchAll();
                 
                   foreach($result as $event)
@@ -154,7 +153,7 @@ session_start();
               
                 <div class="cards">
                 <?php
-                  $statement = $connexion->query("SELECT * FROM event WHERE TAGS_EV LIKE '%Sport%';");
+                  $statement = $pdo->query("SELECT * FROM event WHERE TAGS_EV LIKE '%Sport%';");
                   $result = $statement->fetchAll();
                 
                     foreach($result as $event)

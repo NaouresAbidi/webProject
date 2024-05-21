@@ -35,27 +35,34 @@ if ($user_type == 'organizer') {
 
 $events_result = $stmt->fetchAll();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
+    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+    <!-- <link rel="stylesheet" href="styles/eventlist.css"> -->
+    <link rel="stylesheet" href="styles/styles-profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         .prev-purch {
             margin-top: 30px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            /* justify-content: space-between; */
             gap: 20px;
         }
 
         .purch-card {
             background-color: #e6e6e8;
             margin-bottom: 30px;
-            height:300px;
+            height:330px;
             padding: 25px;
             box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            width: 300px;
         }
 
         
@@ -76,6 +83,9 @@ $events_result = $stmt->fetchAll();
             color: #272343;
             height: 40px;
             border: none;
+            padding: 15px 60px;
+            margin: 20px 0;
+            width: 100%;            
         }
         .invoice-btn:hover{
         background-color: #ffc403;
@@ -89,7 +99,68 @@ $events_result = $stmt->fetchAll();
     <title>Your profile</title>
 </head>
 <body>
+    <nav class="sidebar close">
+            <header>
+                <div class="image-text">
+                    <span class="image">
+                        <a href="home.php"><i class="fa-solid fa-hippo"></i></a>
+                    </span>
+                    <div class="text header-text">
+                        <span class="name">HippoBooking</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right toggle"></i>
+            </header>
+            <div class="menu-bar">
+                <div class="menu">
+                    <li class="search-box">
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass icon"></i>
+                            <input type="text" placeholder="    Search...">
+                    </a>
+                    </li>
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="home.php"><i class="fa-solid fa-house icon"></i>
+                                <span class="text nav-text">Home</span>                            
+                        </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="profile.php"><i class="fa-solid fa-user icon"></i>
+                                <span class="text nav-text">Profile</span>                            
+                        </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="eventlist.php"><i class="fa-solid fa-house icon"></i>
+                                <span class="text nav-text">Events</span>                            
+                        </a>
+                        </li>
+                        
+                    </ul>
 
+                </div>
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="#"><i class="fa-solid fa-right-from-bracket icon"></i>
+                            <span class="text nav-text">Logout</span>                            
+                    </a>
+                    </li>
+                    <li class="mode">
+                        <div class="moon-sun">
+                            <i class="fa-solid fa-moon icon moon"></i>
+                            <i class="fa-solid fa-sun icon sun"></i>
+                        </div>     
+                         <span class="mode-text text">Dark Mode</span>
+                          <div class="toggle-switch">
+                            <span class="switch"></span>
+                          </div>                 
+                    </a>
+                    </li>
+                </div>
+            </div>
+
+    </nav>
+    
     <div class="top">
         <button class="btn" id="editBtn">
             <img src="Media/Icon Edit.png">

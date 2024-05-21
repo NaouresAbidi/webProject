@@ -104,7 +104,7 @@
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$email]);
         echo '<script>alert("Organizer discarded successfully.");</script>'; 
-        header("Location: Dashboard_admin.php"); /
+        header("Location: Dashboard_admin.php"); 
         exit;
     }
     ?>
