@@ -1,9 +1,9 @@
 <?php
 session_start();
-include('db.php');
+include('../db.php');
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: signin.php');
+    header('Location: ../pages_website_connexion/signin.php');
     exit;
 }
 
@@ -19,9 +19,9 @@ $user = $stmt->fetch();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles/eventlist.css">
+    <link rel="stylesheet" href="../styles/eventlist.css">
 
-    <link rel="stylesheet" href="styles/styles_dash_orga.css">
+    <link rel="stylesheet" href="../styles/styles_dash_orga.css">
     <title>Dashboard</title>
 
     </head>
@@ -41,10 +41,10 @@ $user = $stmt->fetch();
         <div class="menu-bar">
             <div class="menu">
                 <div class="profile-div">
-                    <img src="php/<?php echo $user['PFP_U'];?>" alt="Image">
+                    <img src="../<?php echo $user['PFP_U'];?>" alt="Image">
                     <div class="profile-text">
                         <p><?php echo $user['FIRSTNAME_U'].' '.$user['LASTNAME_U'];?></p>
-                        <a href="profile.php">
+                        <a href="../pages_user/profile.php">
                             View profile
                             <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
@@ -80,7 +80,7 @@ $user = $stmt->fetch();
                 <ul class="logout">
                     <hr>
                     <li>
-                        <a href="signin.php"><i class="fa-solid fa-pen-to-square fa-lg icon"></i>
+                        <a href="../pages_website_connexion/Signin.php"><i class="fa-solid fa-pen-to-square fa-lg icon"></i>
                             <span class="text nav-text">Log out</span>                            
                     </a>
                     </li>
@@ -114,15 +114,15 @@ $user = $stmt->fetch();
                 foreach ($events as $event) {
                 ?>
                     <div class="event-card">
-                        <img src="php/<?php echo $event['BANNER']; ?>" alt="Image">
+                        <img src="../<?php echo $event['BANNER']; ?>" alt="Image">
                         <div class="text">
                             <p><?php echo $event['NAME_EV']; ?></p>
                             <p><b><?php echo $event['DATE_EV']; ?></b></p>
                             <div class="event-btns">
-                                <a href="Event.html"><input type="button" value="Display"></a>
-                                <a href="editEventPage.php?idEV=<?php echo $event['ID_EV']; ?>"><button class="btn">Edit</button></a>
+                                <a href="Event.php?id=<?php echo $event['ID_EV']; ?>"><input type="button" value="Display"></a>
+                                <a href="editEventPage.php?idEV=<?php echo $event['ID_EV']; ?>"><input type="button" value="Edit"></a>
 
-                                <form action="php/delEvent.php">
+                                <form action="delEvent.php">
                                     <input class="delBtn" type="button" value="Delete">
                                 </form>
                             </div>
@@ -146,7 +146,7 @@ $user = $stmt->fetch();
                 foreach ($prev_events as $prevEvent) {
                 ?>
                     <div class="event-card prev-event-card">
-                        <img src="php/<?php echo $prevEvent['BANNER']; ?>" alt="Image">
+                        <img src="../<?php echo $prevEvent['BANNER']; ?>" alt="Image">
                         <div class="text">
                             <p><?php echo $prevEvent['NAME_EV']; ?></p>
                             <p><?php echo $prevEvent['DATE_EV']; ?></p>
@@ -162,6 +162,6 @@ $user = $stmt->fetch();
     </div>
 </div>
     </div>
-    <script src="js/script-dash-orga.js"></script>
+    <script src="../js/script-dash-orga.js"></script>
 </body>
 </html>

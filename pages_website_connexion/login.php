@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -25,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         switch ($user['USER_TYPE']) {
             case 'admin':
-                header("Location: Dashboard_admin.php");
+                header("Location: ../pages_admin/Dashboard_admin.php");
                 break;
             case 'organizer':
-                header("Location: Dashboard_orga.php");
+                header("Location: ../pages_organiser/Dashboard_orga.php");
                 break;
             case 'simpleUser':
-                header("Location: eventlist.php");
+                header("Location: ../pages_organiser/eventlist.php");
                 break;
             default:
                 echo "Invalid user type.";

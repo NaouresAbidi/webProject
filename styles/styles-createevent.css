@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.new-modal-box {
+  background-color: white;
+  width: 60%;
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto; 
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-tab-column {
+  width: 45%;
+  float: left;
+  margin-right: 5%;
+}
+
+.modal-tab-column:last-child {
+  margin-right: 0;
+}
+
+.modal-tab-column input[type="text"],
+.modal-tab-column input[type="date"],
+.modal-tab-column input[type="time"],
+.modal-tab-column input[type="number"],
+.modal-tab-column textarea,
+.modal-tab-column select {
+  width: calc(100% - 10px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.modal-tab-column textarea {
+  resize: vertical;
+}
+
+.modal-tab-column label {
+  font-weight: bold;
+}
+
+.tags-tab input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+#previewBanner {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}

@@ -1,5 +1,5 @@
 <?php
-require_once('db.php');
+require_once('../db.php');
 session_start();
 
 
@@ -28,7 +28,7 @@ if(isset($_POST['idEV'], $_POST['eventName'], $_POST['eventDate'], $_POST['event
     }
 
     if(isset($_FILES['eventBanner']) && !empty($_FILES['eventBanner']['name'])) {
-        $uploadDir = 'Uploads/'; 
+        $uploadDir = '../Uploads/'; 
         $uploadFile = $uploadDir . basename($_FILES['eventBanner']['name']);
     
         $result = move_uploaded_file($_FILES["eventBanner"]["tmp_name"], $uploadFile);
@@ -64,8 +64,8 @@ if(isset($_POST['idEV'], $_POST['eventName'], $_POST['eventDate'], $_POST['event
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Event</title>
-    <link rel="stylesheet" href="styles/eventlist.css">
-    <link rel="stylesheet" href="styles/styles_dash_orga.css">
+    <link rel="stylesheet" href="../styles/eventlist.css">
+    <link rel="stylesheet" href="../styles/styles_dash_orga.css">
 </head>
 <body>
 <div id="editModal" class="new-modal">
@@ -130,7 +130,7 @@ if(isset($_POST['idEV'], $_POST['eventName'], $_POST['eventDate'], $_POST['event
 
                             <label for="eventBanner">Banner : </label><br>
                             <input type="file" name="eventBanner" id="eventBanner" accept=".png, .jpg, .jpeg">
-                            <img id="previewBanner" src="php/<?php echo $ev['BANNER'];?>"/>
+                            <img id="previewBanner" src="../<?php echo $ev['BANNER'];?>"/>
                         </td>
                     </tr>
                 </table>

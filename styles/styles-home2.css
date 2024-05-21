@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit";
+}
+
+.title {
+  background-image: url("../Media/home_wallpaper.jpg") !important;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 530px;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+}
+
+
+body {
+    background-color: #7E9899;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+.body {
+    color: #333;
+    max-width: 1200px;
+    margin: 50px 90px;
+}
+
+.btn:hover {
+    background-color: #fef1a4cd;
+}
+
+.event-cards {
+  width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 20px; */
+}
+
+.event-categories {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    background: none;
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.category-btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white; 
+    left: 50%;
+    bottom: 0;
+    transition: width 0.3s, left 0.3s;
+}
+
+.category-btn:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.category-btn.active::after {
+    width: 100%;
+    left: 0;
+}
+
+.category-btn.active {
+    font-weight: bold;
+}
+
+
+.event-card {
+    width: 300px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    margin: 10px;
+}
+
+.card-content {
+    margin-bottom: 10px; 
+}
+.card-content p{
+    margin: 0 20px 10px 20px;
+    font-weight: bolder;
+}
+.card-content h2{
+    margin-left: 20px;
+}
+.event-card img{
+    margin-top: 0px;
+    height:170px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.event-name {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.event-price,
+.event-location,
+.event-places {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+
+.titleBox {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, black 100%);
+    content: '';
+    width: 100%;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 0 70px 90px;
+    margin-top: auto;
+}
+
+.titleBox h1 {
+    font-size: 53px;
+    letter-spacing: 2px;
+}
+
+.titleBox p {
+    font-size: 20px;
+}
+
+.titleBox h1, .titleBox p {
+    width: 50%;
+    text-align: center;
+}
+
+.titleBox * {
+    margin-bottom: 20px;
+}
+
+.titleBox .btn {
+    padding: 12px 70px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.btns a {
+    width: 100%;
+    text-decoration: none;
+    overflow: hidden;}
+
+.btn {
+    background-color: #ffd803;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    color: #272343;
+    border: none;
+    padding: 12px 20px;
+    margin-right: 20px;
+}
+.mogged {
+    display: flex; 
+    flex-direction: row;
+    position:absolute;
+    top:20px;
+    right: 25px;
+    gap: 20px;
+    
+}

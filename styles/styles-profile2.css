@@ -1,3 +1,50 @@
+.prev-purch {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.purch-card {
+  background-color: #e6e6e8;
+  margin-bottom: 30px;
+  height:330px;
+  padding: 25px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  width: 300px;
+}
+
+
+.purch-card img {
+  width: 100%;
+  height: 150px;
+  display: block;
+  object-fit: cover;
+  margin: 0 auto 20px auto;
+}
+
+
+.invoice-btn{
+  background-color: #ffd803;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  color: #272343;
+  height: 40px;
+  border: none;
+  padding: 15px 60px;
+  margin: 20px 0;
+  width: 100%;            
+}
+.invoice-btn:hover{
+background-color: #ffc403;
+cursor: pointer;
+}
+.invoice-btn:active{
+border: 1px solid #bb8f00;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 * {
     font-family: 'Poppins', sans-serif;
@@ -18,6 +65,7 @@
     --tran-04: all 0.4s ease;
     --tran-05: all 0.5s ease;
 }
+
 
 .sidebar .text{
     font-size: 1.5em;

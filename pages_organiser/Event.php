@@ -1,9 +1,9 @@
 <?php
 session_start();
-include('db.php');
+include('../db.php');
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: signin.php');
+    header('Location: ../pages_website_connexion/signin.php');
     exit;
 }
 
@@ -35,14 +35,14 @@ if ($event_id) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/styles-event.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles-event.css">
     <style>
         .title {
-            background-image: url("php/<?php echo htmlspecialchars($event['BANNER']); ?>") !important;
+            background-image: url("../<?php echo htmlspecialchars($event['BANNER']); ?>") !important;
         }
         .form-container {
-            background-image: url("php/<?php echo htmlspecialchars($event['BANNER']); ?>");
+            background-image: url("../<?php echo htmlspecialchars($event['BANNER']); ?>");
         }
     </style>
 </head>
@@ -63,7 +63,7 @@ if ($event_id) {
                 </div>
                 <br><br>
                 <div class="location">
-                    <img class="icon" src="Media/Icon Address.png">
+                    <img class="icon" src="../Media/Icon Address.png">
                     <h2>LOCATION</h2>
                     <p><?php echo htmlspecialchars($event['LOC']); ?></p>
                 </div>
@@ -97,7 +97,7 @@ if ($event_id) {
         <h2>ORGANISED BY</h2>
         <br><br>
         <div class="organiser-container">
-            <img src="php/<?php echo htmlspecialchars($event['PFP_U']); ?>">
+            <img src="../<?php echo htmlspecialchars($event['PFP_U']); ?>">
             <p><?php echo htmlspecialchars($event['FIRSTNAME_U'] . " " . $event['LASTNAME_U']); ?> </p>
         </div>
         <br><br><br>

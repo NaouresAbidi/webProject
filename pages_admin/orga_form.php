@@ -49,7 +49,7 @@
     <h1>Organizer Information</h1>
     
     <?php
-    include 'db.php';
+    include '../db.php';
     if(isset($_POST['display_email'])) {
         $email = $_POST['display_email'];
         $sql = "SELECT * FROM users WHERE EMAIL_U = ?";

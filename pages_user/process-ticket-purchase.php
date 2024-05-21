@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 
 if (!isset($_SESSION['user_id'])) {
     echo 'error: User not logged in';
@@ -17,7 +17,6 @@ if ($eventId === 0 || $nb_tickets <= 0 || empty($pay_method)) {
     exit();
 }
 
-// Fetch event price from the database
 $stmt = $pdo->prepare("SELECT PRICE FROM event WHERE ID_EV = ?");
 $stmt->execute([$eventId]);
 $event = $stmt->fetch(PDO::FETCH_ASSOC);

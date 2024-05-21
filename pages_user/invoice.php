@@ -1,9 +1,9 @@
 <?php
 session_start();
-include('db.php');
+include('../db.php');
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: signin.php');
+    header('Location: ../pages_website_connexion/signin.php');
     exit;
 }
 

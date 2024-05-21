@@ -1,9 +1,9 @@
 <?php
 session_start();
-include('db.php');
+include('../db.php');
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: signin.php');
+    header('../pages_website_connexion/signin.php');
     exit;
 }
 
@@ -22,7 +22,7 @@ $PFP_U = isset($user['PFP_U']) ? $user['PFP_U'] : 'default.jpg';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Profile</title>
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
   
@@ -61,7 +61,7 @@ $PFP_U = isset($user['PFP_U']) ? $user['PFP_U'] : 'default.jpg';
                 <div class="edit-right">
                     <form action="editProfile.php" method="post" enctype="multipart/form-data">
                         <a id="changePic">
-                            <img id="profileImgEdit" class="edit-img" src="uploads/<?php echo $PFP_U; ?>" alt="">
+                            <img id="profileImgEdit" class="edit-img" src="../<?php echo $PFP_U; ?>" alt="">
                             <div class="profilepic__content" id="profileHover">
                                 <span class="profilepic__text">Change image</span>
                             </div>

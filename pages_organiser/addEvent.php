@@ -2,11 +2,10 @@
 
 use function PHPSTORM_META\type;
 
-require_once('Connexion.php');
+require_once('../db.php');
 
 // ------ F O R M -- D A T A ------------------
 
-// if (isset($_POST['mon_champ'])) {
     $ID_ORG = $_POST['orgID'];
     $NAME_EV = $_POST['eventName'];
     $DATE_EV = $_POST['eventDate'];
@@ -28,8 +27,7 @@ require_once('Connexion.php');
 
 
 if(isset($_FILES['eventBanner'])) {
-    //Enregistrement et renommage du fichier
-    $uploadDir = 'Uploads/'; // The directory for saving the file
+    $uploadDir = '../Uploads/';
     $uploadFile = $uploadDir . basename($_FILES['eventBanner']['name']);
     
     $result = move_uploaded_file($_FILES["eventBanner"]["tmp_name"], $uploadFile);
@@ -46,7 +44,7 @@ if(isset($_FILES['eventBanner'])) {
 
 // ------ A D D -- E V E N T ------------------
 
-$reqPrepare = $connexion->prepare("INSERT INTO event (ID_ORG, NAME_EV, DATE_EV, T_START, T_END, LOC, DESC_EV, PRICE, BANNER, TAGS_EV, NB_PLACES) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$reqPrepare = $pdo->prepare("INSERT INTO event (ID_ORG, NAME_EV, DATE_EV, T_START, T_END, LOC, DESC_EV, PRICE, BANNER, TAGS_EV, NB_PLACES) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 $tab = array($ID_ORG, $NAME_EV, $DATE_EV, $T_START, $T_END, $LOC, $DESC_EV, $PRICE, $uploadFile, $TAGS_EV, $NB_PLACES);
 $result = $reqPrepare->execute($tab);

@@ -1,11 +1,9 @@
 <?php
 session_start();
-include('db.php');
+include('../db.php');
 
-// Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if not logged in
-    header('Location: signin.php');
+    header('Location: ../pages_website_connexion/signin.php');
     exit;
 }
 
@@ -42,58 +40,11 @@ $events_result = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
-    <!-- <link rel="stylesheet" href="styles/eventlist.css"> -->
-    <link rel="stylesheet" href="styles/styles-profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/styles-profile2.css">
 
     <style>
-        .prev-purch {
-            margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            /* justify-content: space-between; */
-            gap: 20px;
-        }
-
-        .purch-card {
-            background-color: #e6e6e8;
-            margin-bottom: 30px;
-            height:330px;
-            padding: 25px;
-            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-            width: 300px;
-        }
-
         
-        .purch-card img {
-            width: 100%;
-            height: 150px;
-            display: block;
-            object-fit: cover;
-            margin: 0 auto 20px auto;
-        }
-
-       
-        .invoice-btn{
-            background-color: #ffd803;
-            font-weight: 700;
-            letter-spacing: 1px;
-            border-radius: 8px;
-            color: #272343;
-            height: 40px;
-            border: none;
-            padding: 15px 60px;
-            margin: 20px 0;
-            width: 100%;            
-        }
-        .invoice-btn:hover{
-        background-color: #ffc403;
-        cursor: pointer;
-        }
-        .invoice-btn:active{
-        border: 1px solid #bb8f00;
-        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Your profile</title>
@@ -103,7 +54,7 @@ $events_result = $stmt->fetchAll();
             <header>
                 <div class="image-text">
                     <span class="image">
-                        <a href="home.php"><i class="fa-solid fa-hippo"></i></a>
+                        <a href="../pages_user/home.php"><i class="fa-solid fa-hippo"></i></a>
                     </span>
                     <div class="text header-text">
                         <span class="name">HippoBooking</span>
@@ -121,17 +72,17 @@ $events_result = $stmt->fetchAll();
                     </li>
                     <ul class="menu-links">
                         <li class="nav-link">
-                            <a href="home.php"><i class="fa-solid fa-house icon"></i>
+                            <a href="../pages_user/home.php"><i class="fa-solid fa-house icon"></i>
                                 <span class="text nav-text">Home</span>                            
                         </a>
                         </li>
                         <li class="nav-link">
-                            <a href="profile.php"><i class="fa-solid fa-user icon"></i>
+                            <a href="../pages_user/profile.php"><i class="fa-solid fa-user icon"></i>
                                 <span class="text nav-text">Profile</span>                            
                         </a>
                         </li>
                         <li class="nav-link">
-                            <a href="eventlist.php"><i class="fa-solid fa-house icon"></i>
+                            <a href="../pages_organiser/eventlist.php"><i class="fa-solid fa-house icon"></i>
                                 <span class="text nav-text">Events</span>                            
                         </a>
                         </li>
@@ -141,7 +92,7 @@ $events_result = $stmt->fetchAll();
                 </div>
                 <div class="bottom-content">
                     <li class="">
-                        <a href="#"><i class="fa-solid fa-right-from-bracket icon"></i>
+                        <a href="../pages_website_connexion/Signin.php"><i class="fa-solid fa-right-from-bracket icon"></i>
                             <span class="text nav-text">Logout</span>                            
                     </a>
                     </li>
@@ -163,10 +114,10 @@ $events_result = $stmt->fetchAll();
     
     <div class="top">
         <button class="btn" id="editBtn">
-            <img src="Media/Icon Edit.png">
+            <img src="../Media/Icon Edit.png">
             Edit profile
         </button>
-        <img id="profilePic" class="profile-pic" src="Media/coolcat.jpg" src="<?php echo 'uploads/' . htmlspecialchars($user_data['PFP_U']); ?>" alt="Profile picture">
+        <img id="profilePic" class="profile-pic" src="../Media/coolcat.jpg" src="<?php echo 'uploads/' . htmlspecialchars($user_data['PFP_U']); ?>" alt="Profile picture">
         <div class="main-info">
             <br>
             <h2 id="userName"><?php echo htmlspecialchars($user_data['FIRSTNAME_U']); ?></h2>
@@ -180,17 +131,17 @@ $events_result = $stmt->fetchAll();
 
     <table class="info">
     <tr>
-            <td width="40px"><img class="icon" src="Media/Icon Address.png"></td>
+            <td width="40px"><img class="icon" src="../Media/Icon Address.png"></td>
             <td width="200px"><h4>Address</h4></td>
             <td id="userAddress"><?php echo htmlspecialchars($user_data['ADDRESS']); ?></td>
         </tr>
         <tr>
-            <td><img class="icon" src="Media/Icon Birthday.png"></td>
+            <td><img class="icon" src="../Media/Icon Birthday.png"></td>
             <td><h4>Birthday</h4></td>
             <td id="userBirthday"><?php echo htmlspecialchars($user_data['BIRTHDAY']); ?></td>
         </tr>
         <tr>
-            <td><img class="icon" src="Media/Icon Phone.png"></td>
+            <td><img class="icon" src="../Media/Icon Phone.png"></td>
             <td><h4>Phone Number</h4></td>
             <td id="userPhone"><?php echo htmlspecialchars($user_data['TEL_U']); ?></td>
         </tr>
@@ -200,7 +151,7 @@ $events_result = $stmt->fetchAll();
             <div class="prev-purch">
                 <?php foreach ($events_result as $event): ?>
                     <div class="purch-card">
-                        <img src="php/<?php echo htmlspecialchars($event['BANNER']); ?>" alt="Event banner">
+                        <img src="../<?php echo htmlspecialchars($event['BANNER']); ?>" alt="Event banner">
                         <p><?php echo htmlspecialchars($event['NAME_EV']); ?></p>
                         <p><?php echo htmlspecialchars($event['DATE_EV']); ?></p>
                         <p><b>Total: <?php echo htmlspecialchars($event['PRICE']); ?> $</b></p>
@@ -216,7 +167,7 @@ $events_result = $stmt->fetchAll();
             <div class="prev-purch">
                 <?php foreach ($events_result as $event): ?>
                     <div class="purch-card">
-                        <img src="php/<?php echo htmlspecialchars($event['BANNER']); ?>" alt="Event banner">
+                        <img src="../<?php echo htmlspecialchars($event['BANNER']); ?>" alt="Event banner">
                         <p><?php echo htmlspecialchars($event['NAME_EV']); ?></p>
                         <p><b>Total: <?php echo htmlspecialchars($event['TOTAL_PRICE']); ?> $</b></p>
                         <div class="prev-purch-btns">
@@ -225,8 +176,11 @@ $events_result = $stmt->fetchAll();
                     </div>
                 <?php endforeach; ?>
             </div>
-    <?php endif; ?>
+        <?php endif; ?>
         <br><br><br><br>
+
+        <script src="../js/scriptevent.js">
+        </script>
         <script>
         function redirectToInvoice(eventId) {
             window.location.href = 'invoice.php?event_id=' + eventId;
@@ -235,6 +189,6 @@ $events_result = $stmt->fetchAll();
             const userId = <?php echo json_encode($user_id); ?>;
             window.location.href = 'editprofilepage.php?user_id=' + userId;
         });
-    </script>
+        </script>
     </body>
 </html>

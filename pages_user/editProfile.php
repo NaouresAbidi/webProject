@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('db.php');
+include('../db.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: signin.php');
+    header('Location: ../pages_website_connexion/signin.php');
     exit;
 }
 

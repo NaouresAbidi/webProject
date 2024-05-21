@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: signin.php');
+    header('Location: ../pages_website_connexion/signin.php');
     exit();
 }
 $userId = $_SESSION['user_id'];
@@ -37,7 +37,7 @@ if (!$event) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy your ticket</title>
-    <link rel="stylesheet" href="styles/styles-buy-ticket.css">
+    <link rel="stylesheet" href="../styles/styles-buy-ticket.css">
 </head>
 <body>
     <div class="title">
@@ -123,21 +123,21 @@ if (!$event) {
                     <div class="pay-card-content">
                         <label class="pay-card">
                             <input type="radio" name="pay_method" value="paypal" required>
-                            <img src="Media/PayPal.png" alt="PayPal">
+                            <img src="../Media/PayPal.png" alt="PayPal">
                         </label>
                         <label class="pay-card">
                             <input type="radio" name="pay_method" value="visa" required>
-                            <img src="Media/Visa.png" alt="Visa">
+                            <img src="../Media/Visa.png" alt="Visa">
                         </label>
                     </div>
                     <div class="pay-card-content">
                         <label class="pay-card">
                             <input type="radio" name="pay_method" value="bank transfer" required>
-                            <img src="Media/Bank Transfer.png" alt="Bank Transfer">
+                            <img src="../Media/Bank Transfer.png" alt="Bank Transfer">
                         </label>
                         <label class="pay-card">
                             <input type="radio" name="pay_method" value="mastercard" required>
-                            <img src="Media/Mastercard.png" alt="Mastercard">
+                            <img src="../Media/Mastercard.png" alt="Mastercard">
                         </label>
                     </div>
                 </div>
@@ -148,6 +148,6 @@ if (!$event) {
             </div>
         </form>
     </div>
-    <script src="js/script-buy-tickets.js"></script>
+    <script src="../js/script-buy-tickets.js"></script>
 </body>
 </html>
